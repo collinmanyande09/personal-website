@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Gutica";
+  src: url("assets/fonts/gutica-regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gutica";
+  src: url("assets/fonts/gutica-medium.otf") format("opentype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gutica";
+  src: url("assets/fonts/gutica-semibold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gutica";
+  src: url("assets/fonts/gutica-bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gutica";
+  src: url("assets/fonts/gutica-extrabold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gutica";
+  src: url("assets/fonts/gutica-black.otf") format("opentype");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+:root {
+  --heading: "Gutica", "Arial Rounded MT Bold", "Avenir Next", sans-serif;
+  --sans: "Onest", Arial, sans-serif;
+  --mono: "Onest", Arial, sans-serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading);
+}
+
+/* Keep display emphasis within the same heading family. */
+h1 em,
+h2 em,
+.portrait-copy p,
+.story-cards article > p,
+.footer-note {
+  font-family: var(--heading);
+}
+
+/* The visual display treatments are also part of the Gutica heading system. */
+.mini-logo,
+.question,
+.parcel-box span,
+.parcel-info h3 em,
+.ambassador-circle,
+.quote {
+  font-family: var(--heading);
+}

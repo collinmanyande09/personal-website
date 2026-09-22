@@ -1,0 +1,174 @@
+:root {
+  --radius-panel: 18px;
+  --radius-control: 10px;
+  --shadow-soft: 0 16px 35px rgba(19, 52, 43, 0.09);
+  --shadow-hover: 0 20px 38px rgba(19, 52, 43, 0.16);
+}
+
+/* A few calm, consistent interaction details make the long landing page feel intentional. */
+::selection { background: var(--lime); color: var(--green); }
+*:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
+
+.nav-links a, .text-link, .under-link, .ecosystem-cards a, .footer-nav a, .footer-bottom a {
+  transition: color 180ms ease, opacity 180ms ease;
+}
+.nav-links a { position: relative; padding-block: 8px; }
+.nav-links a::after { content: ""; position: absolute; right: 0; bottom: 2px; left: 0; height: 2px; background: var(--lime); transform: scaleX(0); transform-origin: right; transition: transform 180ms ease; }
+.nav-links a:hover::after, .nav-links a:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+
+.button { min-height: 48px; border: 1px solid transparent; }
+.button:hover { box-shadow: var(--shadow-hover); }
+.button-ghost:hover { background: rgba(255, 255, 255, 0.12); box-shadow: none; }
+.hero-actions .button-ghost:hover { background: rgba(19, 52, 43, 0.07); }
+
+.ecosystem-cards article, .trust-grid article, .story-cards article, .problem-large, .earn-card {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.ecosystem-cards article:hover, .trust-grid article:hover, .story-cards article:hover, .problem-large:hover {
+  transform: translateY(-5px); box-shadow: var(--shadow-soft);
+}
+.ecosystem-cards article:hover { border-color: rgba(179, 230, 125, 0.55); }
+
+.steps article { cursor: pointer; transition: color 180ms ease, padding-left 180ms ease, background 180ms ease; }
+.steps article.selected, .steps article:hover, .steps article:focus-visible { padding-left: 12px; background: rgba(179, 230, 125, 0.13); }
+.steps article:focus-visible { outline-offset: -3px; }
+
+.faq-list details { transition: background 180ms ease, padding 180ms ease; }
+.faq-list details[open] { background: rgba(179, 230, 125, 0.12); padding-inline: 16px; }
+.faq-list summary { padding: 2px 0; }
+.faq-list summary b { color: #6d9b46; }
+
+.phone, .floating-card, .parcel-card, .portrait-tag, .local-points { box-shadow: var(--shadow-soft); }
+.is-unavailable { opacity: 0.72; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
+
+/* Shared panel geometry keeps the page's visual rhythm consistent. */
+.hero-visual,
+.problem-large,
+.phones-stage,
+.parcel-hero,
+.driver-portrait,
+.ambassador-visual,
+.zim-photo,
+.ecosystem-cards article,
+.trust-grid article,
+.story-cards article,
+.earn-card {
+  border-radius: var(--radius-panel);
+}
+
+.button,
+.parcel-card,
+.driver-card,
+.where-card,
+.location-entry,
+.parcel-select,
+.portrait-tag,
+.local-points,
+.store-links a {
+  border-radius: var(--radius-control);
+}
+
+/* Use the same vertical alignment for paired section content. */
+.driver-content,
+.zimbabwe,
+.pilot,
+.ambassador,
+.vision,
+.faq {
+  align-items: center;
+}
+
+/* Gutica needs a touch more air in the pilot's longer headline. */
+.pilot-content h2 {
+  letter-spacing: -0.035em;
+}
+
+.pilot-content h2 em {
+  letter-spacing: -0.025em;
+}
+
+/* Parcel is a product preview, not an active service yet. */
+.parcel.coming-soon .parcel-hero,
+.parcel.coming-soon .parcel-flow,
+.parcel.coming-soon .parcel-screens {
+  opacity: 0.64;
+}
+
+.parcel.coming-soon .parcel-hero {
+  position: relative;
+}
+
+.parcel.coming-soon .parcel-hero::after {
+  content: "COMING SOON";
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  color: var(--lime);
+  font: 700 10px var(--sans);
+  letter-spacing: 0.08em;
+}
+
+.is-unavailable,
+.parcel.coming-soon button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+a.is-unavailable {
+  color: inherit;
+  text-decoration: none;
+}
+
+.parcel.coming-soon .button,
+.parcel.coming-soon .app-button {
+  background: #6b7e74;
+  color: rgba(255, 255, 255, 0.86);
+  box-shadow: none;
+}
+
+/* Community stories stay in preview mode until members begin sharing. */
+.stories.coming-soon .story-cards {
+  opacity: 0.52;
+  pointer-events: none;
+}
+
+.stories.coming-soon .story-cards::after {
+  content: "Community stories will appear here once people start sharing their Rideo experiences.";
+  position: absolute;
+  inset: 50% 24px auto;
+  transform: translateY(-50%);
+  max-width: 390px;
+  margin: auto;
+  padding: 14px 16px;
+  border-radius: var(--radius-control);
+  background: var(--green);
+  color: #fff;
+  font: 600 13px/1.5 var(--sans);
+  text-align: center;
+  z-index: 1;
+}
+
+.stories.coming-soon .story-cards {
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .nav-wrap { position: relative; }
+  .nav-links.mobile-open { padding: 18px; }
+  .nav-links.mobile-open a { padding: 6px 2px; }
+  .nav-links a::after { display: none; }
+  .button { min-height: 46px; }
+  .faq-list details[open] { padding-inline: 12px; }
+
+  .parcel.coming-soon .parcel-hero::after {
+    top: 18px;
+    right: 18px;
+  }
+}
