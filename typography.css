@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Gutica";
-  src: url("assets/fonts/gutica-regular.otf") format("opentype");
+  src: url("gutica-regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Gutica";
-  src: url("assets/fonts/gutica-medium.otf") format("opentype");
+  src: url("gutica-medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Gutica";
-  src: url("assets/fonts/gutica-semibold.otf") format("opentype");
+  src: url("gutica-semibold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: "Gutica";
-  src: url("assets/fonts/gutica-bold.otf") format("opentype");
+  src: url("gutica-bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
   font-family: "Gutica";
-  src: url("assets/fonts/gutica-extrabold.otf") format("opentype");
+  src: url("gutica-extrabold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -40,7 +40,7 @@
 
 @font-face {
   font-family: "Gutica";
-  src: url("assets/fonts/gutica-black.otf") format("opentype");
+  src: url("gutica-black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
